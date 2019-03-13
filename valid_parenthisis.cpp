@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <stack>
 
 using namespace std;
 
@@ -36,18 +37,18 @@ bool	isValid_stack(string s)
 	if (s.size() == 0) return true ;
 	if (s.size() == 1) return false ;
 
-	int n = n.size;
+	int n = s.size();
 
 	stack<char> st;
 
 	if (s[0] == ')' || s[0] == '}' || s[0] == ']')
 		return (false);
 	else
-		st.push[0];
+		st.push(s[0]);
 
 	for (int i = 1; i < n; ++i)
 	{
-		if (s[0] == ')' || s[0] == '}' || s[0] == ']')
+		if (s[i] == ')' || s[i] == '}' || s[i] == ']')
 		{
 			if (st.empty())
 				return (false);
@@ -66,15 +67,15 @@ bool	isValid_stack(string s)
 	if (st.empty())
 	 return true;
 	else
-	 return false
+	 return false;
 }
 
 int		main(void)
 {
-	string data = "()()(){}[]";
+	string data = "()()()";
 
 	bool test = isValid_recursive(data);
-	// int test2 = maximum_product_of_the_three_idea_2(data);
+	 test = isValid_stack(data);
 
 
 	cout << test << endl;
