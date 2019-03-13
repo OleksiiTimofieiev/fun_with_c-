@@ -52,11 +52,21 @@ bool	isValid_stack(string s)
 			if (st.empty())
 				return (false);
 			else
-				
+			{
+				if (st.top() == '{' && s[i] == '}' || st.top() == '(' && s[i] == ')' || st.top() == '[' && s[i] == ']')
+					st.pop();
+				else
+					return false;
+			}
 		}
 		else
 			st.push(s[i]);
 	}
+
+	if (st.empty())
+	 return true;
+	else
+	 return false
 }
 
 int		main(void)
