@@ -1,0 +1,46 @@
+-- start the thread ---
+
+- to start the thread we need to construct std::thread
+- std::thread my_thread(do_some_work
+- class background_task
+{
+	public:
+	      void operator()() const
+	      {
+}
+background_task f;
+std::thread my_thread(f);
+std::thread my_thread([](
+      do_something();
+      do_something_else();
+});
+- variables can be copied to local stack of the thread function;
+- end: join or detach;
+- to guarantee successfull finish of func / thread;
+struct func;
+
+void f() {
+
+int some_local_state=0;
+func my_func(some_local_state)
+std::thread t(my_func);
+try
+{
+	do_something_in_current_thread();
+}
+catch(...)
+{
+   throw;
+	t.join();
+
+}
+t.join();
+- joinable() -> to check that the thread can be assed;
+- class X
+{
+public:
+      void do_lengthy_work();
+};
+X my_x;
+std::thread t(&X::do_lengthy_work,&my_x);
+- std::thread t(process_big_object,std::move(p));
